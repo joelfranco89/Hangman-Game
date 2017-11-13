@@ -1,0 +1,11 @@
+*{
+	font-family: Courier;
+}
+.center{
+	text-align: center;
+}
+.pictureContainer{
+	height: 600px;
+	width: 300px;
+	border-style: dotted;
+}
