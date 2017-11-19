@@ -1,7 +1,25 @@
 var wins = 0
-var wordCount = 1
 var numberOfGuessesRemaining = 12
 var lettersAlreadyGuessed = 0
+var activeWordApple = true
+var activeWordGoogle = false
+var activeWordMicrosoft = false
+var a1 = 0
+var p1 = 0
+var l1 = 0
+var e1 = 0
+var g2 = 0
+var o2 = 0
+var l2 = 0
+var e2 = 0
+var m3 = 0
+var i3 = 0
+var c3 = 0
+var r3 = 0
+var o3 = 0
+var s3 = 0
+var f3 = 0
+var t3 = 0
 function reset() {
 	numberOfGuessesRemaining = 12
 	lettersAlreadyGuessed = 0
@@ -12,34 +30,51 @@ function hideApple(){
 function hideGoogle(){
 	document.getElementById("googleDisplay").style.display = "none";
 }
-if (wordCount == 1){
-		document.onkeyup = function(event){
+
+
+	document.onkeyup = function(event){
+
+		if (activeWordApple == true){
+	
 			switch(event.key){
 				case "a":
-				lettersAlreadyGuessed += 1
 				document.getElementById("a1").innerHTML = "a"
+				a1 += 1
+					if (a1 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "p":
 				document.getElementById("p1").innerHTML = "p"
 				document.getElementById("p1a").innerHTML = "p"
-				lettersAlreadyGuessed += 1
+				p1 += 1
+					if (p1 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "l":
 				document.getElementById("l1").innerHTML = "l"
-				lettersAlreadyGuessed += 1
+				l1 += 1
+					if (l1 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "e":
 				document.getElementById("e1").innerHTML = "e"
-				lettersAlreadyGuessed += 1
+				e1 += 1
+					if (e1 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				default:
 				numberOfGuessesRemaining -= 1
 			}
+
 			if (lettersAlreadyGuessed == 4){	
-				wordCount += 1
-				wins += 1
-				document.getElementById("wins").innerHTML = wins
-				reset()
+				activeWordApple = false
+				activeWordGoogle = true
+				wins += 1	
+				reset()	
 				hideApple()
 				alert("You win!")
 			}
@@ -47,99 +82,128 @@ if (wordCount == 1){
 			alert("Game over! Try again!")
 			reset()
 			}
-			console.log(wordCount)
-
-		document.getElementById("numberOfGuesses").innerHTML = numberOfGuessesRemaining
-		document.getElementById("lettersGuessed").innerHTML = lettersAlreadyGuessed
-		}
-}
-if (wordCount == 2){
-		document.onkeyup = function(event){
+		} else if (activeWordGoogle == true){
 			switch(event.key){
 				case "g":
-				lettersAlreadyGuessed += 1
-				document.getElementById("g2").innerHTML = "a"
-				document.getElementById("g2a").innerHTML = "a"
+				document.getElementById("g2").innerHTML = "g"
+				document.getElementById("g2a").innerHTML = "g"
+				g2 += 1
+					if (g2 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "o":
-				document.getElementById("o2").innerHTML = "p"
-				document.getElementById("o2a").innerHTML = "p"
-				lettersAlreadyGuessed += 1
+				document.getElementById("o2").innerHTML = "o"
+				document.getElementById("o2a").innerHTML = "o"
+				o2 += 1
+				if (o2 == 1){
+						lettersAlreadyGuessed += 1
+					}
+				break;
+				case "l":
+				document.getElementById("l2").innerHTML = "l"
+				l2 += 1
+				if (l2 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "e":
-				document.getElementById("l2").innerHTML = "e"
-				lettersAlreadyGuessed += 1
-				break;
-				case "e":
-				document.getElementById("e2")
-				lettersAlreadyGuessed += 1
+				document.getElementById("e2").innerHTML = "e"
+				e2 += 1
+				if (e2 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				default:
 				numberOfGuessesRemaining -= 1
 			}
-			if (lettersAlreadyGuessed === 4){
-				wordCount += 1
+			if (lettersAlreadyGuessed == 4){
+				activeWordGoogle = false
+				activeWordMicrosoft = true
 				wins += 1
-				document.getElementById("wins").innerHTML = wins
 				reset()
-				hideApple()
+				hideGoogle()
 				alert("You win!")
 			}
 			if (numberOfGuessesRemaining == 0){
 			alert("Game over! Try again!")
 			reset()
 			}
-
-		document.getElementById("numberOfGuesses").innerHTML = numberOfGuessesRemaining
-		document.getElementById("lettersGuessed").innerHTML = lettersAlreadyGuessed
-		}
-}
-if (wordCount == 3){
-		document.onkeyup = function(event){
+		}else if (activeWordMicrosoft == true){
 			switch(event.key){
 				case "m":
-				lettersAlreadyGuessed += 1
-				document.getElementById("m3").innerHTML = "a"
+				document.getElementById("m3").innerHTML = "m"
+				m3 += 1
+				if (m3 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "i":
-				document.getElementById("i3").innerHTML = "p"
-				lettersAlreadyGuessed += 1
+				document.getElementById("i3").innerHTML = "i"
+				i3 += 1
+				if (i3 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "c":
-				document.getElementById("c3").innerHTML = "e"
-				lettersAlreadyGuessed += 1
+				document.getElementById("c3").innerHTML = "c"
+				c3 += 1
+				if (c3 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				break;
 				case "r":
 				document.getElementById("r3").innerHTML = "r"
-				lettersAlreadyGuessed += 1
+				r3 += 1
+				if (r3 == 1){
+						lettersAlreadyGuessed += 1
+					}
+				break;
 				case "o":
 				document.getElementById("o3").innerHTML = "o"
 				document.getElementById("o3a").innerHTML = "o"
-				lettersAlreadyGuessed += 1
+				o3 += 1
+				if (o3 == 1){
+						lettersAlreadyGuessed += 1
+					}
+				break;
 				case "s":
 				document.getElementById("s3").innerHTML = "s"
-				lettersAlreadyGuessed += 1
+				s3 += 1
+				if (s3 == 1){
+						lettersAlreadyGuessed += 1
+					}
+				break;
 				case "f":
 				document.getElementById("f3").innerHTML = "f"
-				lettersAlreadyGuessed += 1
+				f3 += 1
+				if (f3 == 1){
+						lettersAlreadyGuessed += 1
+					}
+				break;
 				case "t":
 				document.getElementById("t3").innerHTML = "t"
-				lettersAlreadyGuessed += 1
+				t3 += 1
+				if (t3 == 1){
+						lettersAlreadyGuessed += 1
+					}
 				default:
 				numberOfGuessesRemaining -= 1
 			}
-			if (lettersAlreadyGuessed === 4){
-				alert("You win!")
-				wordCount += 1
-				reset()
+			if (lettersAlreadyGuessed === 8){
+				alert("You win! Start over.")
+				window.location.reload()
+
 			}
 			if (numberOfGuessesRemaining == 0){
-			alert("Game over! Try again!")
-			reset()
+				alert("Game over! Try again!")
+				reset()
 			}
 
+		}
 		document.getElementById("numberOfGuesses").innerHTML = numberOfGuessesRemaining
 		document.getElementById("lettersGuessed").innerHTML = lettersAlreadyGuessed
-		}
-}
+		document.getElementById("wins").innerHTML = wins
+
+	}
 
 
