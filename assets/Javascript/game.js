@@ -80,7 +80,7 @@ function hideGoogle(){
 			}
 			if (numberOfGuessesRemaining == 0){
 			alert("Game over! Try again!")
-			reset()
+			window.location.reload()
 			}
 		} else if (activeWordGoogle == true){
 			switch(event.key){
@@ -126,7 +126,7 @@ function hideGoogle(){
 			}
 			if (numberOfGuessesRemaining == 0){
 			alert("Game over! Try again!")
-			reset()
+			window.location.reload()
 			}
 		}else if (activeWordMicrosoft == true){
 			switch(event.key){
@@ -196,7 +196,7 @@ function hideGoogle(){
 			}
 			if (numberOfGuessesRemaining == 0){
 				alert("Game over! Try again!")
-				reset()
+				window.location.reload()
 			}
 
 		}
