@@ -11,12 +11,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <img src="assets/images/theHangman.png" alt="?" height="300" width="500" >
+          <center>
+          <img src="assets/images/theHangman.jpeg" alt="?" height="300" width="500" >
+          </center>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12">
-          <h1 class="center"> Testing</h1>
+          <h1 class="center"> </h1>
         </div>
       </div>
       <div class="row">
@@ -24,7 +26,9 @@
         </div>
         <div class="col-md-4" >
           <section class="pictureContainer"> 
-
+            <center><img id="appleImage" src="assets/images/apple-image.jpeg" alt="?" height="200" width="200" style="padding: 10px;"></center>
+            <center><img id="googleImage" src="assets/images/google-image.png" alt="?" height="200" width="200" style="padding: 10px;"></center>
+            <center><img id="microsoftImage" src="assets/images/microsoft-image.png" alt="?" height="200" width="200" style="padding: 10px;"></center>
           </section>
         </div>
         <div class="col-md-4">
@@ -34,36 +38,37 @@
             <h3 id="wins">0</h3>
             <h3>Current Word</h3>
             <div class="row" id="appleDisplay">
-              <p style="display: inline;" id="a1"></p>
-              <p style="display: inline;" id="p1"></p>
-              <p style="display: inline;" id="p1a"></p>
-              <p style="display: inline;" id="l1"></p>
-              <p style="display: inline;" id="e1"></p>
+              <p style="display: inline;" id="a1">-</p>
+              <p style="display: inline;" id="p1">-</p>
+              <p style="display: inline;" id="p1a">-</p>
+              <p style="display: inline;" id="l1">-</p>
+              <p style="display: inline;" id="e1">-</p>
             </div>  
               <div class="row" id="googleDisplay">
-              <p style="display: inline;" id="g2"></p>
-              <p style="display: inline;" id="o2"></p>
-              <p style="display: inline;" id="o2a"></p>
-              <p style="display: inline;" id="g2a"></p>
-              <p style="display: inline;" id="l2"></p>
-              <p style="display: inline;" id="e2"></p>
+              <p style="display: inline;" id="g2">-</p>
+              <p style="display: inline;" id="o2">-</p>
+              <p style="display: inline;" id="o2a">-</p>
+              <p style="display: inline;" id="g2a">-</p>
+              <p style="display: inline;" id="l2">-</p>
+              <p style="display: inline;" id="e2">-</p>
             </div>
             <div class="row" id="microsoftDisplay">
-              <p style="display: inline;" id="m3"></p>
-              <p style="display: inline;" id="i3"></p>
-              <p style="display: inline;" id="c3"></p>
-              <p style="display: inline;" id="r3"></p>
-              <p style="display: inline;" id="o3"></p>
-              <p style="display: inline;" id="s3"></p>
-              <p style="display: inline;" id="o3a"></p>
-              <p style="display: inline;" id="f3"></p>
-              <p style="display: inline;" id="t3"></p>
+              <p style="display: inline;" id="m3">-</p>
+              <p style="display: inline;" id="i3">-</p>
+              <p style="display: inline;" id="c3">-</p>
+              <p style="display: inline;" id="r3">-</p>
+              <p style="display: inline;" id="o3">-</p>
+              <p style="display: inline;" id="s3">-</p>
+              <p style="display: inline;" id="o3a">-</p>
+              <p style="display: inline;" id="f3">-</p>
+              <p style="display: inline;" id="t3">-</p>
             </div>
             <h3></h3>
             <h3>Number of guesses remaining</h3>
             <h3 id="numberOfGuesses">12</h3>
             <h3>Letters already guessed</h3>
-            <h3 id="lettersGuessed">0</h3>
+            <h3 id="lettersGuessed">0</h3><br>
+            <button type="button" onclick="startOver()">Start Over</button>
 
           </section>
         </div>

@@ -30,7 +30,46 @@ function hideApple(){
 function hideGoogle(){
 	document.getElementById("googleDisplay").style.display = "none";
 }
+function hideMicrosoft(){
+	document.getElementById("microsoftDisplay").style.display = "none";
+}
+function showApple(){
+	document.getElementById("appleDisplay").style.display = "block";
+}
+function showGoogle(){
+	document.getElementById("googleDisplay").style.display = "block";
+}
+function showMicrosoft(){
+	document.getElementById("microsoftDisplay").style.display = "block";
+}
+function showAppleImage(){
+	document.getElementById("appleImage").style.display = "block";
+}
+function showGoogleImage(){
+	document.getElementById("googleImage").style.display = "block";
+}
+function showIMicrosoftimage(){
+	document.getElementById("microsoftImage").style.display = "block";
+}
+function hideAppleImage(){
+	document.getElementById("appleImage").style.display = "none";
+}
+function hideGoogleImage(){
+	document.getElementById("googleImage").style.display = "none";
+}
+function hideMicrosoftImage(){
+	document.getElementById("microsoftImage").style.display = "none";
+}
+function startOver(){
+	window.location.reload()
+}
 
+
+hideGoogle()
+hideMicrosoft()
+hideAppleImage()
+hideGoogleImage()
+hideMicrosoftImage()
 
 	document.onkeyup = function(event){
 
@@ -70,12 +109,14 @@ function hideGoogle(){
 				numberOfGuessesRemaining -= 1
 			}
 
-			if (lettersAlreadyGuessed == 4){	
+			if (lettersAlreadyGuessed == 4){
+				showAppleImage()	
 				activeWordApple = false
 				activeWordGoogle = true
 				wins += 1	
 				reset()	
 				hideApple()
+				showGoogle()
 				alert("You win!")
 			}
 			if (numberOfGuessesRemaining == 0){
@@ -117,11 +158,14 @@ function hideGoogle(){
 				numberOfGuessesRemaining -= 1
 			}
 			if (lettersAlreadyGuessed == 4){
+				hideAppleImage()
+				showGoogleImage()
 				activeWordGoogle = false
 				activeWordMicrosoft = true
 				wins += 1
 				reset()
 				hideGoogle()
+				showMicrosoft()
 				alert("You win!")
 			}
 			if (numberOfGuessesRemaining == 0){
@@ -190,8 +234,10 @@ function hideGoogle(){
 				numberOfGuessesRemaining -= 1
 			}
 			if (lettersAlreadyGuessed === 8){
-				alert("You win! Start over.")
-				window.location.reload()
+				wins += 1
+				hideGoogleImage()
+				showIMicrosoftimage()
+				alert("You win!")
 
 			}
 			if (numberOfGuessesRemaining == 0){
@@ -203,7 +249,6 @@ function hideGoogle(){
 		document.getElementById("numberOfGuesses").innerHTML = numberOfGuessesRemaining
 		document.getElementById("lettersGuessed").innerHTML = lettersAlreadyGuessed
 		document.getElementById("wins").innerHTML = wins
-
 	}
 
 
